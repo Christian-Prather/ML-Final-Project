@@ -1,62 +1,21 @@
-
-import math
-import time
-# import cv2
-import numpy as np
-import pyrealsense2 as rs
-import cv2
 import pandas as pd
+import os
+import matplotlib.pyplot as plt
 
-# Configure depth and color streams
-pipeline = rs.pipeline()
-config = rs.config()
-config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
-config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 
-# Start streaming
-pipeline.start(config)
-points = rs.points
-frames = pipeline.wait_for_frames()
+data_path =  os.getcwd()
+def load_csv_data():
+    csv_path = os.path.join(data_path,'captures', "data" + str(0)+".csv")
+    df = pd.read_csv(csv_path)
+    df.columns = ["X", "Y", "Z"]
+    return df
 
-# Get stream profile and camera intrinsics
-# profile = pipeline.get_active_profile()
-# depth_profile = rs.video_stream_profile(profile.get_stream(rs.stream.depth))
-# depth_intrinsics = depth_profile.get_intrinsics()
-# w, h = depth_intrinsics.width, depth_intrinsics.height
+world = load_csv_data()
+world = world.loc[(world!=0).any(1)]
 
-# Processing blocks
-pc = rs.pointcloud()
-decimate = rs.decimation_filter()
-decimate.set_option(rs.option.filter_magnitude, 2 ** 2)
-colorizer = rs.colorizer()
-file_name = 0
-while True:
-    userInput = input("Press key to take snapshot....")    
-    if userInput == "z":
-        exit
-    depth = frames.get_depth_frame()
-    color_frame = frames.get_color_frame()
-    depth = decimate.process(depth)
+print (world)
+print(world.info())
+print(world.describe())
 
-    points = pc.calculate(depth)
-    depth_image = np.asanyarray(depth.get_data())
-    color_image = np.asanyarray(color_frame.get_data())
-    depth_colormap = np.asanyarray(colorizer.colorize(depth).get_data())
-    vertecies = points.get_vertices()
-    verts = np.asanyarray(vertecies)
-    print("////////////////////////////////////////////////////////////////////////////")
-    # for vert in verts:
-    #     print(vert)
-    print(verts.shape)
-    # cv2.imshow("Image", depth_colormap)
-    # cv2.waitKey(10)
-    # data_frame = pd.DataFrame(data=verts, index = ['Row_' + str(i + 1)  
-    #                     for i in range(verts.shape[0])],columns=["x", "y", "z"])
-    # print(data_frame)
-    # drop_series = (data_frame != 0).any(axis=1)
-    # filtered_data = data_frame.loc[drop_series]
-
-    # filtered_data.to_csv('data' + str(file_name))
-    np.savetxt('data' + str(file_name) + '.csv', verts, delimiter=",")
-    cv2.imwrite('data' + str(file_name)+ '.jpg', depth_colormap)
-    file_name+=1
+world.hist(bins=50, figsize=(20,15))
+plt.show()
