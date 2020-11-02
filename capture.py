@@ -48,20 +48,28 @@ while True:
     depth_colormap = np.asanyarray(colorizer.colorize(depth).get_data())
     vertecies = points.get_vertices()
     verts = np.asanyarray(vertecies)
-    print("////////////////////////////////////////////////////////////////////////////")
+    # test = verts.reshape(verts.size, 3)
+    print(verts)
+    # print(test)
+    # test_df = pd.DataFrame({'x': verts[:0], 'y': verts[:1], 'z': verts[:2]})
+    # print(test_df)
+    # test_df = test_df.join(test_df["x"])
+    # print("////////////////////////////////////////////////////////////////////////////")
     # for vert in verts:
     #     print(vert)
-    print(verts.shape)
-    # cv2.imshow("Image", depth_colormap)
-    # cv2.waitKey(10)
-    # data_frame = pd.DataFrame(data=verts, index = ['Row_' + str(i + 1)  
-    #                     for i in range(verts.shape[0])],columns=["x", "y", "z"])
-    # print(data_frame)
-    # drop_series = (data_frame != 0).any(axis=1)
-    # filtered_data = data_frame.loc[drop_series]
+    # print(verts.shape)
+    # # cv2.imshow("Image", depth_colormap)
+    # # cv2.waitKey(10)
+    # # data_frame = pd.DataFrame(data=verts, index = ['Row_' + str(i + 1)  
+    # #                     for i in range(verts.shape[0])],columns=["x", "y", "z"])
+    # # print(data_frame)
+    # # drop_series = (data_frame != 0).any(axis=1)
+    # # filtered_data = data_frame.loc[drop_series]
 
-    # filtered_data.to_csv('data' + str(file_name))
+    # # filtered_data.to_csv('data' + str(file_name))
     save_path = os.path.join(current_path, 'captures')
+    # np.savetxt(save_path + '/test' + str(file_name) + '.csv', test, delimiter=",")
+
     np.savetxt(save_path + '/chair' + str(file_name) + '.csv', verts, delimiter=",")
     cv2.imwrite(save_path + '/chair' + str(file_name)+ '.jpg', depth_colormap)
     file_name+=1
