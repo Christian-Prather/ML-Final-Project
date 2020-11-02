@@ -19,7 +19,6 @@ config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 # Start streaming
 pipeline.start(config)
 points = rs.points
-frames = pipeline.wait_for_frames()
 
 # Get stream profile and camera intrinsics
 # profile = pipeline.get_active_profile()
@@ -37,6 +36,8 @@ while True:
     userInput = input("Press key to take snapshot....")    
     if userInput == "z":
         exit
+    frames = pipeline.wait_for_frames()
+
     depth = frames.get_depth_frame()
     color_frame = frames.get_color_frame()
     depth = decimate.process(depth)
@@ -61,6 +62,6 @@ while True:
 
     # filtered_data.to_csv('data' + str(file_name))
     save_path = os.path.join(current_path, 'captures')
-    np.savetxt(save_path + '/data' + str(file_name) + '.csv', verts, delimiter=",")
-    cv2.imwrite(save_path + '/data' + str(file_name)+ '.jpg', depth_colormap)
+    np.savetxt(save_path + '/chair' + str(file_name) + '.csv', verts, delimiter=",")
+    cv2.imwrite(save_path + '/chair' + str(file_name)+ '.jpg', depth_colormap)
     file_name+=1
