@@ -16,7 +16,6 @@ config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 pipeline.start(config)
 points = rs.points
 frames = pipeline.wait_for_frames()
-depth = frames.get_depth_frame()
 
 # Get stream profile and camera intrinsics
 # profile = pipeline.get_active_profile()
@@ -26,13 +25,19 @@ depth = frames.get_depth_frame()
 
 # Processing blocks
 pc = rs.pointcloud()
-# decimate = rs.decimation_filter()
-# decimate.set_option(rs.option.filter_magnitude, 2 ** state.decimate)
+decimate = rs.decimation_filter()
+decimate.set_option(rs.option.filter_magnitude, 2 ** 2)
 # colorizer = rs.colorizer()
+depth = frames.get_depth_frame()
+depth = decimate.process(depth)
 
 points = pc.calculate(depth)
 depth_image = np.asanyarray(depth.get_data())
-vertecies = points.get_vertecies()
-
+vertecies = points.get_vertices()
+verts = np.asanyarray(vertecies)
 print("////////////////////////////////////////////////////////////////////////////")
-print(vertecies)
+# for vert in verts:
+#     print(vert)
+print(verts.shape)
+
+np.savetxt('data.csv', verts, delimiter=",")
