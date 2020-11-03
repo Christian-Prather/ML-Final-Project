@@ -6,6 +6,7 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, Input, Conv1D
 from tensorflow.keras.optimizers import Adam
+from tensorflow.python.framework.convert_to_constants import convert_variables_to_constants_v2
 import pandas as pd
 import numpy as np
 
@@ -58,3 +59,25 @@ model.compile(optimizer=Adam(),
 
 model.fit(train_dataset, 
             epochs=20)
+
+# Save the model:
+
+model.save('./frozen_keras.h5')
+
+tf.saved_model.save(model, './frozen_models')
+
+# Convert Keras model to ConcreteFunction
+full_model = tf.function(lambda x: model(x))
+full_model = full_model.get_concrete_function(
+        tf.TensorSpec(model.inputs[0].shape, model.inputs[0].dtype))
+# Get frozen ConcreteFunction                                                                                                                                   
+frozen_func = convert_variables_to_constants_v2(full_model)
+frozen_func.graph.as_graph_def()
+layers = [op.name for op in frozen_func.graph.get_operations()]
+
+# Save frozen graph from frozen ConcreteFunction to hard drive                                                                                                  
+tf.io.write_graph(graph_or_graph_def=frozen_func.graph,
+                  logdir="./frozen_models",
+                  name="frozen_graph.pb",
+                  as_text=False)
+
