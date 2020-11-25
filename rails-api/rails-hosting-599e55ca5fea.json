@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "rails-hosting",
+  "private_key_id": "599e55ca5feaeff24bf47063dc2f35713da97240",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC/WgoEn4Now5c6\nwm0gNSz7TLfW6wOZ7m12PPFU56aFAUuKtGgcFi9i3tSF3Qts99UmAPKr6mrOntlX\nAnwHiQKUlwT1sosXFP/kJhqmqWBm6bPONv/6XgboLUB+/RTPS+cA0J+yPRiOBbeb\nr7W+3g1AVmVKMmJZVbCurSt037MEnZmnPf4S5czGE0b32nn3mzHlPfnxi3x+ntvU\nYQQZN1GGznwCoFiqcpjXZ19FvRM1Dyh0YBcYtbq8laWABytHlRuVtxnw48fyT1OT\nrxtd7P790Q2OAG67lZxqS7CnwVXyz7PMlz89t1sbS4udNFJO0AeDZlcGlZCDZqMU\n/fy+aD6fAgMBAAECggEAGWZ+2PFBtNjtzLd9W96jK3KaHrXQoxDSx/S8Bky/vn0X\nBYEAJuZNAP9aT7CxcRQO374VeHukFOxiJlomk6t8w7OuTV0XeIdplmP2erQWH2Mb\nYp7LaPUtTomfO5wltIS7U9Dduf/BMC0TG9/9rKn2MVmmlWxNwNUOoIlNMPT24wA7\ny8PZjwiD7ssSHjx+8u+SwkNDV0pp958de9TS3nppdDVq/PZQdgwMhQAwxuM8k8sl\nwJ2v5pK+TzHY3YLn0pNrJPwV24e+ADK81i4FRnJlX46kg0rKXuRXKfHWsB8fDapV\npr4VobIm0H2Kkh4ibKElj3Y4zy4AZ9MwBvxSsmxHdQKBgQDpL/EmIyQOYoDuJ1hI\nSQzh3leKJEvSSsUjzfXursuH/GozHEXc9OyBI57lAylkNpYV6qpSwwdjNBFaZdx9\nznc0YsN2LDoz0T45cBjDC+r2UnTHY1PCniJvWtkCeE+HziRqDFQ2uG9cyrGzhujp\n5HTpT7ADi2WaXo+4A3mKgpsiPQKBgQDSEli8uFQz6UXl87MreYrksmZh1ko8e6Zd\nnLyp/5QAULu8Z3we2zguxYV6mJ74R/ILnWYBLpkGiY6MAfC54IuoxcVXTH6R99Fg\ngFhnDKxGM9tlhednXkV1pfeGTFjy8q0LXRI/Px50+ZbxmHk1sLa39GvS35zLb41I\nFP6BA28+CwKBgD1kN9LYkZeP623HwgBV6yRUCyv9XlDhCoHgqYzLTB5jH/qQyPvh\nJ5rgK+cTLASMMntWqrzbR8igXqk0BBbDErMiBV/JSRF3VzB8CKjhLFzpXIFZ7yVf\nyKUUf+mcjyOr6/5XfJxjdj4xxxMCw7NASF9ccXSdcIRxvNivYYJL3FfpAoGASPiA\nhIWPEj0sv5TonuhoW8qwj7mtLddR0eC5FGAoG/fvTqGv1tQVbwHDvPM4/UuYg3pY\nTX7PPxsXPgEKira6LJUOWKXErZWk0F2k157qVLR8uIZL/Hcdr6FIGwl4OGQdwf3B\nceDOBpoQWbm6GPFadwnbTnPIdk44iFpqkYwM30MCgYAl6G2Maq4KPgywhdXYfGEE\nSe1dKYJxdkpGK5MJAw28U1csWS4buO97vLYJHGg02rGVgf6cPx2ihMcnuTjzmsYy\nwej2hYZ7LNM547r/MXDdr8GDDmbvbw9oHMPkECx2e2U70f1gDxq87Px7PCQRMS3k\nFsktOTA1D/muobAduMUcwg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "rails-testing@rails-hosting.iam.gserviceaccount.com",
+  "client_id": "108495447115875076264",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rails-testing%40rails-hosting.iam.gserviceaccount.com"
+}
