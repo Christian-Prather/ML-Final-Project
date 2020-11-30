@@ -7,6 +7,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, Input, Conv1D
 from tensorflow.keras.optimizers import Adam
 from tensorflow.python.framework.convert_to_constants import convert_variables_to_constants_v2
+from tensorflow.keras.callbacks import EarlyStopping
 import pandas as pd
 import numpy as np
 
@@ -43,9 +44,23 @@ train_dataset = train_dataset.shuffle(len(train_points)).batch(BATCH_SIZE)
 print(train_points.shape)
 print(train_dataset)
 
+# Stop early if training is not making progress
+earlystopping = EarlyStopping(monitor = 'accuracy', 
+                              verbose = 1,
+                              min_delta = 0.01, 
+                              patience = 100, 
+                              mode = 'max',
+                              restore_best_weights=True)
+
+callbacks_list = [earlystopping]
+
 model = Sequential()
 # model.add(keras.Input(shape=(num_points, 3)))
 model.add(Dense(8, input_shape=(num_points, 3), activation='relu'))
+model.add(Dense(16, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(64, activation='relu'))
+# model.add(Dense(128, activation='relu'))
 model.add(Dense(num_classes, activation='softmax'))
 # model.add(Conv1D(8, 3, input_shape=(num_points, 3), activation='relu'))
 # model.add(Conv1D(num_classes, 3, activation='softmax'))
@@ -58,7 +73,8 @@ model.compile(optimizer=Adam(),
 # model.summary()
 
 model.fit(train_dataset, 
-            epochs=20)
+            epochs=10000,
+            callbacks=callbacks_list)
 
 # Save the model:
 
