@@ -8,6 +8,7 @@ from concurrent import futures
 from mpu6050 import mpu6050
 sensor = mpu6050(0x68)
 from detect import shared
+import detect
 
 class Sensors(ptolemy_pb2_grpc.SensorsServicer):
     def ImuStream(self, request_iterator, context):
@@ -60,4 +61,5 @@ if __name__ == "__main__":
     server.add_insecure_port('10.0.97.28:1997')
     server.start()
     print("Listening...")
+    detect.main()
     server.wait_for_termination()
