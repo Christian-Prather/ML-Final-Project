@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rptolemy.proto\x12\x07sensors\"!\n\rStreamRequest\x12\x10\n\x08\x64o_stuff\x18\x01 \x01(\x08\"\x16\n\x05Hello\x12\r\n\x05reply\x18\x01 \x01(\t\"4\n\x08Joystick\x12\x14\n\x0c\x66orward_back\x18\x01 \x01(\x05\x12\x12\n\nleft_right\x18\x02 \x01(\x05\"D\n\x06MlCtrl\x12\x10\n\x08isRemote\x18\x01 \x01(\x08\x12\x14\n\x0c\x66orward_back\x18\x02 \x01(\x05\x12\x12\n\nleft_right\x18\x03 \x01(\x05\"X\n\x07ImuCtrl\x12!\n\x03imu\x18\x01 \x01(\x0e\x32\x14.sensors.ImuCtrl.Imu\"*\n\x03Imu\x12\x0b\n\x07UNKNOWN\x10\x00\x12\r\n\tFOOTPLATE\x10\x01\x12\x07\n\x03MPU\x10\x02\".\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\x12\x13\n\x0breturn_code\x18\x02 \x01(\x05\"E\n\x07IRFrame\x12\r\n\x05\x66rame\x18\x01 \x01(\x0c\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\x0c\n\x04size\x18\x04 \x01(\x05\"\x9c\x06\n\x07ImuData\x12\x14\n\x0cquaternion_x\x18\x01 \x01(\x01\x12\x14\n\x0cquaternion_y\x18\x02 \x01(\x01\x12\x14\n\x0cquaternion_z\x18\x03 \x01(\x01\x12\x14\n\x0cquaternion_w\x18\x04 \x01(\x01\x12\x16\n\x0e\x61\x63\x63\x65leration_x\x18\x05 \x01(\x01\x12\x16\n\x0e\x61\x63\x63\x65leration_y\x18\x06 \x01(\x01\x12\x16\n\x0e\x61\x63\x63\x65leration_z\x18\x07 \x01(\x01\x12\x0e\n\x06gyro_x\x18\x08 \x01(\x01\x12\x0e\n\x06gyro_y\x18\t \x01(\x01\x12\x0e\n\x06gyro_z\x18\n \x01(\x01\x12\x0f\n\x07\x65uler_x\x18\x0b \x01(\x01\x12\x0f\n\x07\x65uler_y\x18\x0c \x01(\x01\x12\x0f\n\x07\x65uler_z\x18\r \x01(\x01\x12\x17\n\x0f\x61\x63\x63\x65lerometer_x\x18\x0e \x01(\x01\x12\x17\n\x0f\x61\x63\x63\x65lerometer_y\x18\x0f \x01(\x01\x12\x17\n\x0f\x61\x63\x63\x65lerometer_z\x18\x10 \x01(\x01\x12\x16\n\x0emagnetometer_x\x18\x11 \x01(\x01\x12\x16\n\x0emagnetometer_y\x18\x12 \x01(\x01\x12\x16\n\x0emagnetometer_z\x18\x13 \x01(\x01\x12\x11\n\tgravity_x\x18\x14 \x01(\x01\x12\x11\n\tgravity_y\x18\x15 \x01(\x01\x12\x11\n\tgravity_z\x18\x16 \x01(\x01\x12\x36\n\ncal_system\x18\x17 \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\x12\x39\n\rcal_gyroscope\x18\x18 \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\x12=\n\x11\x63\x61l_accelerometer\x18\x19 \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\x12<\n\x10\x63\x61l_magnetometer\x18\x1a \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\"R\n\x11\x43\x61librationStatus\x12\x12\n\x0eNOT_CALIBRATED\x10\x00\x12\x0f\n\x0bIN_PROGRESS\x10\x01\x12\n\n\x06USABLE\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\"\xac\x03\n\x07GPSData\x12\x10\n\x08latitude\x18\x01 \x01(\x05\x12\x11\n\tlongitude\x18\x02 \x01(\x05\x12\x19\n\x11heading_of_motion\x18\x03 \x01(\x05\x12\x14\n\x0cnumber_of_sv\x18\x04 \x01(\r\x12\x0c\n\x04hDOP\x18\x05 \x01(\r\x12\x18\n\x10height_above_sea\x18\x06 \x01(\x05\x12\x14\n\x0cground_speed\x18\x07 \x01(\x05\x12+\n\x07quality\x18\x08 \x01(\x0e\x32\x1a.sensors.GPSData.quality_t\x12\x0c\n\x04year\x18\t \x01(\x05\x12\r\n\x05month\x18\n \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x0b \x01(\x05\x12\x0c\n\x04hour\x18\x0c \x01(\x05\x12\x0e\n\x06minute\x18\r \x01(\x05\x12\x0e\n\x06second\x18\x0e \x01(\x05\"\x87\x01\n\tquality_t\x12\n\n\x06no_fix\x10\x00\x12\x16\n\x12standard_gps_2d_3d\x10\x01\x12\x14\n\x10\x64ifferential_gps\x10\x02\x12\x16\n\x12rtk_fixed_solution\x10\x04\x12\x16\n\x12rtk_float_solution\x10\x05\x12\x10\n\x0c\x65stimated_dr\x10\x06\"\xd7\x02\n\x11NavigationScaling\x12\x10\n\x08\x66ront_fb\x18\x01 \x01(\x02\x12\x10\n\x08\x66ront_rl\x18\x02 \x01(\x02\x12\x16\n\x0e\x66ront_right_fb\x18\x03 \x01(\x02\x12\x16\n\x0e\x66ront_right_rl\x18\x04 \x01(\x02\x12\x15\n\rfront_left_fb\x18\x05 \x01(\x02\x12\x15\n\rfront_left_rl\x18\x06 \x01(\x02\x12\x10\n\x08right_fb\x18\x07 \x01(\x02\x12\x10\n\x08right_rl\x18\x08 \x01(\x02\x12\x0f\n\x07left_fb\x18\t \x01(\x02\x12\x0f\n\x07left_rl\x18\n \x01(\x02\x12\x15\n\rback_right_fb\x18\x0b \x01(\x02\x12\x15\n\rback_right_rl\x18\x0c \x01(\x02\x12\x14\n\x0c\x62\x61\x63k_left_fb\x18\r \x01(\x02\x12\x14\n\x0c\x62\x61\x63k_left_rl\x18\x0e \x01(\x02\x12\x0f\n\x07\x62\x61\x63k_fb\x18\x0f \x01(\x02\x12\x0f\n\x07\x62\x61\x63k_rl\x18\x10 \x01(\x02\x32\xd7\x03\n\x07Sensors\x12\x32\n\tTurnOnImu\x12\x10.sensors.ImuCtrl\x1a\x11.sensors.Response\"\x00\x12\x33\n\nTurnOffImu\x12\x10.sensors.ImuCtrl\x1a\x11.sensors.Response\"\x00\x12\x32\n\nJsOverride\x12\x0f.sensors.MlCtrl\x1a\x11.sensors.Response\"\x00\x12G\n\x14SetNavigationScaling\x12\x1a.sensors.NavigationScaling\x1a\x11.sensors.Response\"\x00\x12\x39\n\tGPSStream\x12\x16.sensors.StreamRequest\x1a\x10.sensors.GPSData\"\x00\x30\x01\x12\x39\n\tImuStream\x12\x16.sensors.StreamRequest\x1a\x10.sensors.ImuData\"\x00\x30\x01\x12\x36\n\nTestStream\x12\x16.sensors.StreamRequest\x1a\x0e.sensors.Hello\"\x00\x12\x38\n\x08IRStream\x12\x16.sensors.StreamRequest\x1a\x10.sensors.IRFrame\"\x00\x30\x01\x62\x06proto3'
+  serialized_pb=b'\n\rptolemy.proto\x12\x07sensors\"!\n\rStreamRequest\x12\x10\n\x08\x64o_stuff\x18\x01 \x01(\x08\"\x16\n\x05Hello\x12\r\n\x05reply\x18\x01 \x01(\t\"4\n\x08Joystick\x12\x14\n\x0c\x66orward_back\x18\x01 \x01(\x05\x12\x12\n\nleft_right\x18\x02 \x01(\x05\"D\n\x06MlCtrl\x12\x10\n\x08isRemote\x18\x01 \x01(\x08\x12\x14\n\x0c\x66orward_back\x18\x02 \x01(\x05\x12\x12\n\nleft_right\x18\x03 \x01(\x05\"X\n\x07ImuCtrl\x12!\n\x03imu\x18\x01 \x01(\x0e\x32\x14.sensors.ImuCtrl.Imu\"*\n\x03Imu\x12\x0b\n\x07UNKNOWN\x10\x00\x12\r\n\tFOOTPLATE\x10\x01\x12\x07\n\x03MPU\x10\x02\".\n\x08Response\x12\r\n\x05reply\x18\x01 \x01(\t\x12\x13\n\x0breturn_code\x18\x02 \x01(\x05\"E\n\x07IRFrame\x12\r\n\x05\x66rame\x18\x01 \x01(\x0c\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\x0c\n\x04size\x18\x04 \x01(\x05\"\xb0\x06\n\x07ImuData\x12\x14\n\x0cquaternion_x\x18\x01 \x01(\x01\x12\x14\n\x0cquaternion_y\x18\x02 \x01(\x01\x12\x14\n\x0cquaternion_z\x18\x03 \x01(\x01\x12\x14\n\x0cquaternion_w\x18\x04 \x01(\x01\x12\x16\n\x0e\x61\x63\x63\x65leration_x\x18\x05 \x01(\x01\x12\x16\n\x0e\x61\x63\x63\x65leration_y\x18\x06 \x01(\x01\x12\x16\n\x0e\x61\x63\x63\x65leration_z\x18\x07 \x01(\x01\x12\x0e\n\x06gyro_x\x18\x08 \x01(\x01\x12\x0e\n\x06gyro_y\x18\t \x01(\x01\x12\x0e\n\x06gyro_z\x18\n \x01(\x01\x12\x0f\n\x07\x65uler_x\x18\x0b \x01(\x01\x12\x0f\n\x07\x65uler_y\x18\x0c \x01(\x01\x12\x0f\n\x07\x65uler_z\x18\r \x01(\x01\x12\x17\n\x0f\x61\x63\x63\x65lerometer_x\x18\x0e \x01(\x01\x12\x17\n\x0f\x61\x63\x63\x65lerometer_y\x18\x0f \x01(\x01\x12\x17\n\x0f\x61\x63\x63\x65lerometer_z\x18\x10 \x01(\x01\x12\x16\n\x0emagnetometer_x\x18\x11 \x01(\x01\x12\x16\n\x0emagnetometer_y\x18\x12 \x01(\x01\x12\x16\n\x0emagnetometer_z\x18\x13 \x01(\x01\x12\x11\n\tgravity_x\x18\x14 \x01(\x01\x12\x11\n\tgravity_y\x18\x15 \x01(\x01\x12\x11\n\tgravity_z\x18\x16 \x01(\x01\x12\x12\n\nisKeyPoint\x18\x1b \x01(\x08\x12\x36\n\ncal_system\x18\x17 \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\x12\x39\n\rcal_gyroscope\x18\x18 \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\x12=\n\x11\x63\x61l_accelerometer\x18\x19 \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\x12<\n\x10\x63\x61l_magnetometer\x18\x1a \x01(\x0e\x32\".sensors.ImuData.CalibrationStatus\"R\n\x11\x43\x61librationStatus\x12\x12\n\x0eNOT_CALIBRATED\x10\x00\x12\x0f\n\x0bIN_PROGRESS\x10\x01\x12\n\n\x06USABLE\x10\x02\x12\x0c\n\x08\x43OMPLETE\x10\x03\"\xac\x03\n\x07GPSData\x12\x10\n\x08latitude\x18\x01 \x01(\x05\x12\x11\n\tlongitude\x18\x02 \x01(\x05\x12\x19\n\x11heading_of_motion\x18\x03 \x01(\x05\x12\x14\n\x0cnumber_of_sv\x18\x04 \x01(\r\x12\x0c\n\x04hDOP\x18\x05 \x01(\r\x12\x18\n\x10height_above_sea\x18\x06 \x01(\x05\x12\x14\n\x0cground_speed\x18\x07 \x01(\x05\x12+\n\x07quality\x18\x08 \x01(\x0e\x32\x1a.sensors.GPSData.quality_t\x12\x0c\n\x04year\x18\t \x01(\x05\x12\r\n\x05month\x18\n \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x0b \x01(\x05\x12\x0c\n\x04hour\x18\x0c \x01(\x05\x12\x0e\n\x06minute\x18\r \x01(\x05\x12\x0e\n\x06second\x18\x0e \x01(\x05\"\x87\x01\n\tquality_t\x12\n\n\x06no_fix\x10\x00\x12\x16\n\x12standard_gps_2d_3d\x10\x01\x12\x14\n\x10\x64ifferential_gps\x10\x02\x12\x16\n\x12rtk_fixed_solution\x10\x04\x12\x16\n\x12rtk_float_solution\x10\x05\x12\x10\n\x0c\x65stimated_dr\x10\x06\"\xd7\x02\n\x11NavigationScaling\x12\x10\n\x08\x66ront_fb\x18\x01 \x01(\x02\x12\x10\n\x08\x66ront_rl\x18\x02 \x01(\x02\x12\x16\n\x0e\x66ront_right_fb\x18\x03 \x01(\x02\x12\x16\n\x0e\x66ront_right_rl\x18\x04 \x01(\x02\x12\x15\n\rfront_left_fb\x18\x05 \x01(\x02\x12\x15\n\rfront_left_rl\x18\x06 \x01(\x02\x12\x10\n\x08right_fb\x18\x07 \x01(\x02\x12\x10\n\x08right_rl\x18\x08 \x01(\x02\x12\x0f\n\x07left_fb\x18\t \x01(\x02\x12\x0f\n\x07left_rl\x18\n \x01(\x02\x12\x15\n\rback_right_fb\x18\x0b \x01(\x02\x12\x15\n\rback_right_rl\x18\x0c \x01(\x02\x12\x14\n\x0c\x62\x61\x63k_left_fb\x18\r \x01(\x02\x12\x14\n\x0c\x62\x61\x63k_left_rl\x18\x0e \x01(\x02\x12\x0f\n\x07\x62\x61\x63k_fb\x18\x0f \x01(\x02\x12\x0f\n\x07\x62\x61\x63k_rl\x18\x10 \x01(\x02\x32\xd7\x03\n\x07Sensors\x12\x32\n\tTurnOnImu\x12\x10.sensors.ImuCtrl\x1a\x11.sensors.Response\"\x00\x12\x33\n\nTurnOffImu\x12\x10.sensors.ImuCtrl\x1a\x11.sensors.Response\"\x00\x12\x32\n\nJsOverride\x12\x0f.sensors.MlCtrl\x1a\x11.sensors.Response\"\x00\x12G\n\x14SetNavigationScaling\x12\x1a.sensors.NavigationScaling\x1a\x11.sensors.Response\"\x00\x12\x39\n\tGPSStream\x12\x16.sensors.StreamRequest\x1a\x10.sensors.GPSData\"\x00\x30\x01\x12\x39\n\tImuStream\x12\x16.sensors.StreamRequest\x1a\x10.sensors.ImuData\"\x00\x30\x01\x12\x36\n\nTestStream\x12\x16.sensors.StreamRequest\x1a\x0e.sensors.Hello\"\x00\x12\x38\n\x08IRStream\x12\x16.sensors.StreamRequest\x1a\x10.sensors.IRFrame\"\x00\x30\x01\x62\x06proto3'
 )
 
 
@@ -84,8 +84,8 @@ _IMUDATA_CALIBRATIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1133,
-  serialized_end=1215,
+  serialized_start=1153,
+  serialized_end=1235,
 )
 _sym_db.RegisterEnumDescriptor(_IMUDATA_CALIBRATIONSTATUS)
 
@@ -129,8 +129,8 @@ _GPSDATA_QUALITY_T = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1511,
-  serialized_end=1646,
+  serialized_start=1531,
+  serialized_end=1666,
 )
 _sym_db.RegisterEnumDescriptor(_GPSDATA_QUALITY_T)
 
@@ -572,28 +572,35 @@ _IMUDATA = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cal_system', full_name='sensors.ImuData.cal_system', index=22,
+      name='isKeyPoint', full_name='sensors.ImuData.isKeyPoint', index=22,
+      number=27, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cal_system', full_name='sensors.ImuData.cal_system', index=23,
       number=23, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cal_gyroscope', full_name='sensors.ImuData.cal_gyroscope', index=23,
+      name='cal_gyroscope', full_name='sensors.ImuData.cal_gyroscope', index=24,
       number=24, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cal_accelerometer', full_name='sensors.ImuData.cal_accelerometer', index=24,
+      name='cal_accelerometer', full_name='sensors.ImuData.cal_accelerometer', index=25,
       number=25, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cal_magnetometer', full_name='sensors.ImuData.cal_magnetometer', index=25,
+      name='cal_magnetometer', full_name='sensors.ImuData.cal_magnetometer', index=26,
       number=26, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -613,7 +620,7 @@ _IMUDATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=419,
-  serialized_end=1215,
+  serialized_end=1235,
 )
 
 
@@ -736,8 +743,8 @@ _GPSDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1218,
-  serialized_end=1646,
+  serialized_start=1238,
+  serialized_end=1666,
 )
 
 
@@ -873,8 +880,8 @@ _NAVIGATIONSCALING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1649,
-  serialized_end=1992,
+  serialized_start=1669,
+  serialized_end=2012,
 )
 
 _IMUCTRL.fields_by_name['imu'].enum_type = _IMUCTRL_IMU
@@ -977,8 +984,8 @@ _SENSORS = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1995,
-  serialized_end=2466,
+  serialized_start=2015,
+  serialized_end=2486,
   methods=[
   _descriptor.MethodDescriptor(
     name='TurnOnImu',
