@@ -48,7 +48,7 @@ class Sensors(ptolemy_pb2_grpc.SensorsServicer):
             data.gravity_z=(27)
             data.isKeyPoint = shared.keyPoint
             print("Imu requested...")
-            time.sleep(0.5)
+            time.sleep(2)
             yield data
 
 
