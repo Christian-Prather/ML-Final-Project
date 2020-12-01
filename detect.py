@@ -4,7 +4,11 @@ from PIL import Image
 from tensorflow.keras import models
 import pyrealsense2.pyrealsense2 as rs
 
-keyPoint = False
+class datastore:
+    keyPoint = False
+# keyPoint = False
+shared = datastore()
+
 #Load the saved model
 
 def main():
@@ -61,14 +65,14 @@ def main():
             print(prediction)
             if prediction == 0:
                 print ("Chair")
-                keyPoint = True
+                shared.keyPoint = True
                     #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             elif prediction == 1:
                 print("Bed")
-                keyPoint = False
+                shared.keyPoint = False
             else:
                 print("Couch")
-                keyPoint = False
+                shared.keyPoint = False
             # cv2.imshow("Capturing", frame)
             # key=cv2.waitKey(1)
             # if key == ord('q'):
