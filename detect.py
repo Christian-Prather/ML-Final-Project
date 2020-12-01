@@ -12,7 +12,7 @@ shared = datastore()
 #Load the saved model
 
 def main():
-    model = models.load_model('new.h5')
+    model = models.load_model('new_new.h5')
     pipeline = rs.pipeline()
     config = rs.config()
     config.enable_stream(rs.stream.depth, 480, 270, rs.format.z16, 15)

@@ -36,8 +36,8 @@ class Sensors(ptolemy_pb2_grpc.SensorsServicer):
             data.euler_z=(555)
 
             data.acceleration_x = sensor.get_accel_data()['x']
-            data.acceleration_y=(200)
-            data.acceleration_z=(200)
+            data.acceleration_y= sensor.get_accel_data()['y']
+            data.acceleration_z= sensor.get_accel_data()['z']
 
             data.magnetometer_x=(6)
             data.magnetometer_y=(6)
@@ -48,7 +48,7 @@ class Sensors(ptolemy_pb2_grpc.SensorsServicer):
             data.gravity_z=(27)
             data.isKeyPoint = shared.keyPoint
             print("Imu requested...")
-            time.sleep(2)
+            time.sleep(0.5)
             yield data
 
 
