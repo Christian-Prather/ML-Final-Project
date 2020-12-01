@@ -34,7 +34,7 @@ class Sensors(ptolemy_pb2_grpc.SensorsServicer):
             data.euler_y=(555)
             data.euler_z=(555)
 
-            data.acceleration_x = sensor.get_accel_data()
+            data.acceleration_x = sensor.get_accel_data().x
             data.acceleration_y=(200)
             data.acceleration_z=(200)
 
