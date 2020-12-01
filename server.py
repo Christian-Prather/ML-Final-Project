@@ -5,6 +5,7 @@ import ptolemy_pb2_grpc
 import ptolemy_pb2
 import time
 from concurrent import futures
+import detect
 
 class Sensors(ptolemy_pb2_grpc.SensorsServicer):
     def ImuStream(self, request_iterator, context):
@@ -42,6 +43,7 @@ class Sensors(ptolemy_pb2_grpc.SensorsServicer):
             data.gravity_x=(27)
             data.gravity_y=(27)
             data.gravity_z=(27)
+            data.isKeyPoint = detect.keyPoint
             print("Imu requested...")
             time.sleep(3)
             yield data

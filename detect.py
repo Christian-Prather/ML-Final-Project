@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from tensorflow.keras import models
 import pyrealsense2.pyrealsense2 as rs
-
+keyPoint = False
 #Load the saved model
 model = models.load_model('rgb_sparse.h5')
 pipeline = rs.pipeline()
@@ -58,11 +58,14 @@ try:
         print(prediction)
         if prediction == 0:
             print ("Chair")
+            keyPoint = True
                 #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         elif prediction == 1:
             print("Bed")
+            keyPoint = False
         else:
             print("Couch")
+            keyPoint = False
         # cv2.imshow("Capturing", frame)
         # key=cv2.waitKey(1)
         # if key == ord('q'):
