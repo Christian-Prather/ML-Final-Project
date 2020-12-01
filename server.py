@@ -53,7 +53,7 @@ if __name__ == "__main__":
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     ptolemy_pb2_grpc.add_SensorsServicer_to_server(Sensors(), server)
 
-    server.add_insecure_port('localhost:1997')
+    server.add_insecure_port('10.0.97.28:1997')
     server.start()
     print("Listening...")
     server.wait_for_termination()
