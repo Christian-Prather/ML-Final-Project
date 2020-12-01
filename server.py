@@ -5,6 +5,8 @@ import ptolemy_pb2_grpc
 import ptolemy_pb2
 import time
 from concurrent import futures
+from mpu6050 import mpu6050
+sensor = mpu6050(0x68)
 import detect
 
 class Sensors(ptolemy_pb2_grpc.SensorsServicer):
@@ -32,7 +34,7 @@ class Sensors(ptolemy_pb2_grpc.SensorsServicer):
             data.euler_y=(555)
             data.euler_z=(555)
 
-            data.acceleration_x=(20)
+            data.acceleration_x = sensor.get_accel_data()
             data.acceleration_y=(200)
             data.acceleration_z=(200)
 
